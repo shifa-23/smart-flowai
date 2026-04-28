@@ -55,7 +55,12 @@
     --shadow-glow-soft: 0 0 60px hsl(221 90% 65% / 0.25);
     --shadow-elegant: 0 20px 50px -20px hsl(221 83% 53% / 0.35);
 
-    --transition-smooth: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+    /* Motion system — 3 standard speeds, 1 standard ease */
+    --ease-standard: cubic-bezier(0.4, 0, 0.2, 1);
+    --dur-fast: 150ms;
+    --dur-medium: 250ms;
+    --dur-slow: 500ms;
+    --transition-smooth: all var(--dur-medium) var(--ease-standard);
   }
 }
 
@@ -96,5 +101,32 @@
       linear-gradient(hsl(220 13% 91% / 0.5) 1px, transparent 1px),
       linear-gradient(90deg, hsl(220 13% 91% / 0.5) 1px, transparent 1px);
     background-size: 60px 60px;
+  }
+
+  /* Motion utilities */
+  .transition-fast { transition: all var(--dur-fast) var(--ease-standard); }
+  .transition-medium { transition: all var(--dur-medium) var(--ease-standard); }
+  .transition-slow { transition: all var(--dur-slow) var(--ease-standard); }
+  .transition-smooth { transition: var(--transition-smooth); }
+
+  /* Card hover lift */
+  .card-lift {
+    transition: transform var(--dur-medium) var(--ease-standard),
+                box-shadow var(--dur-medium) var(--ease-standard),
+                border-color var(--dur-medium) var(--ease-standard);
+  }
+  .card-lift:hover { transform: translateY(-4px); }
+
+  /* Button press */
+  .btn-press { transition: transform var(--dur-fast) var(--ease-standard), box-shadow var(--dur-fast) var(--ease-standard); }
+  .btn-press:active { transform: translateY(1px) scale(0.99); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  *, *::before, *::after {
+    animation-duration: 0.01ms !important;
+    animation-iteration-count: 1 !important;
+    transition-duration: 0.01ms !important;
+    scroll-behavior: auto !important;
   }
 }
