@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
-import { Sparkles } from "lucide-react";
 import { useEffect, useState } from "react";
+import logo from "@/assets/logo.jpg";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -47,11 +47,8 @@ const Navbar = () => {
             scrolled ? "bg-white/85 backdrop-blur-xl shadow-card" : "bg-white/70 backdrop-blur-md shadow-sm"
           )}
         >
-          <a href="#" className="flex items-center gap-2 font-display font-bold text-lg text-foreground transition-fast hover:opacity-90">
-            <span className="grid place-items-center h-8 w-8 rounded-lg bg-gradient-primary shadow-glow-primary">
-              <Sparkles className="h-4 w-4 text-primary-foreground" />
-            </span>
-            SkillYug Lab
+          <a href="#" className="flex items-center gap-2 transition-fast hover:opacity-90">
+            <img src={logo} alt="SkillYug Technology logo" className="h-10 w-auto" />
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm">
             {links.map((l) => (
