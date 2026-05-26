@@ -49,7 +49,7 @@ const Navbar = () => {
         >
           <a href="#" className="flex items-center gap-2 transition-fast hover:opacity-90">
             <img src={logo} alt="SkillYug Technology logo" className="h-14 md:h-16 w-auto" />
-            <span className="font-display font-bold text-lg md:text-xl text-foreground tracking-tight">SKILLYUG</span>
+            <span className="font-display font-bold text-lg md:text-xl tracking-tight text-gradient">SKILLYUG</span>
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm">
             {links.map((l) => (
