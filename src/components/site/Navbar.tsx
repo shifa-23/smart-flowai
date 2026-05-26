@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { useEffect, useState } from "react";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo.png";
 import { cn } from "@/lib/utils";
 
 const links = [
@@ -43,13 +43,30 @@ const Navbar = () => {
       <div className="mx-auto max-w-content px-6 md:px-10 py-4">
         <div
           className={cn(
-            "rounded-xl border border-border flex items-center justify-between px-5 py-3 transition-medium",
+            "rounded-2xl shadow-lg border border-border flex items-center justify-between px-6 py-2 transition-medium",
             scrolled ? "bg-white/85 backdrop-blur-xl shadow-card" : "bg-white/70 backdrop-blur-md shadow-sm"
           )}
         >
-          <a href="#" className="flex items-center gap-2 transition-fast hover:opacity-90">
-            <img src={logo} alt="SkillYug Technology logo" className="h-14 md:h-16 w-auto" />
-            <span className="font-display font-bold text-lg md:text-xl tracking-tight text-[#0B1C3F]">SKILLYUG</span>
+          <a
+            href="#"
+            className="flex items-center gap-3 transition-fast hover:opacity-90"
+          >
+            <img
+              src={logo}
+              alt="SkillYug Technology logo"
+              className="h-12 md:h-14 w-auto object-contain"
+            />
+
+            <div className="flex flex-col leading-none items-center">
+              <span className="text-2xl md:text-3xl font-extrabold tracking-tight whitespace-nowrap">
+                <span className="text-primary">SKILL</span>
+                <span className="text-[#0B1C3F]">YUG</span>
+              </span>
+
+              <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-500">
+                  TECHNOLOGIES
+              </span>
+            </div>
           </a>
           <nav className="hidden md:flex items-center gap-8 text-sm">
             {links.map((l) => (
