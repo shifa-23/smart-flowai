@@ -1,4 +1,5 @@
-import { Sparkles, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
+import logo from "@/assets/logo.jpg";
 
 const Footer = () => {
   return (
@@ -6,11 +7,8 @@ const Footer = () => {
       <div className="mx-auto max-w-content px-6 md:px-10">
         <div className="grid md:grid-cols-4 gap-10">
           <div className="md:col-span-2">
-            <div className="flex items-center gap-2 font-display font-bold text-lg text-foreground">
-              <span className="grid place-items-center h-8 w-8 rounded-lg bg-gradient-primary shadow-glow-primary">
-                <Sparkles className="h-4 w-4 text-primary-foreground" />
-              </span>
-              SkillYug Lab
+            <div className="flex items-center gap-2">
+              <img src={logo} alt="SkillYug Technology logo" className="h-12 w-auto" />
             </div>
             <p className="mt-4 text-sm text-muted-foreground max-w-sm leading-relaxed">
               Smart AI systems that save time, reduce costs, and scale your operations.
