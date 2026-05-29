@@ -42,7 +42,7 @@ const Index = () => {
         )}
       >
         <Button variant="hero" size="lg" className="w-full btn-press shadow-elegant" asChild>
-          <a href="#cta"><PhoneCall className="mr-1" /> Book a Call</a>
+          <a href="tel:9450935939"><PhoneCall className="mr-1" /> Book a Call</a>
         </Button>
       </div>
     </main>

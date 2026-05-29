@@ -33,7 +33,7 @@ const Hero = () => {
                 <a href="#cta">Get Started <ArrowRight className="ml-1" /></a>
               </Button>
               <Button variant="glass" size="lg" className="btn-press" asChild>
-                <a href="#cta"><PhoneCall className="mr-1" /> Book a Call</a>
+                <a href="tel:9450935939"><PhoneCall className="mr-1" /> Book a Call</a>
               </Button>
             </div>
           </Reveal>

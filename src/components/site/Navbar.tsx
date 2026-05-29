@@ -89,7 +89,7 @@ const Navbar = () => {
             ))}
           </nav>
           <Button variant="hero" size="sm" className="btn-press" asChild>
-            <a href="#cta">Book a Call</a>
+            <a href="tel:9450935939">Book a Call</a>
           </Button>
         </div>
       </div>
