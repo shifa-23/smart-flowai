@@ -174,7 +174,7 @@ const SkillyugProjectCatalog = () => {
           <div className="lg:col-span-7">
             <div className="inline-flex items-center gap-2 px-3 py-1.5 rounded-full bg-primary/10 border border-primary/20 text-xs font-semibold text-primary mb-4">
               <Sparkles className="h-3.5 w-3.5" />
-              <span>SKILLYUG TECHNOLOGIES</span>
+              <span>SKILLYUG</span>
             </div>
             <h2 className="font-display text-3xl md:text-5xl font-extrabold tracking-tight text-foreground leading-[1.1] mb-6">
               Empowering Businesses with <span className="text-gradient">Next-Gen IT Solutions</span>
