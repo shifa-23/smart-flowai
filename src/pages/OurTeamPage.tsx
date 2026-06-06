@@ -15,7 +15,7 @@ import adti from "@/assets/adti.jpg";
 const members = [
   {
     name: "Vinayak Pandey",
-    role: "CEO",
+    role: "Chief Executive Officer",
     photoUrl: vinyk,
     description:
       "Leading the company with vision, strategy, and a commitment to delivering impactful digital solutions.",

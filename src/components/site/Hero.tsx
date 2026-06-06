@@ -38,7 +38,7 @@ const Hero = () => {
           <Reveal delay={400}>
             <div className="mt-10 flex items-center gap-6 md:gap-8 text-sm text-muted-foreground">
               <div>
-                <div className="text-foreground font-bold text-2xl"><Counter to={120} suffix="+" /></div>
+                <div className="text-foreground font-bold text-2xl"><Counter to={10} suffix="+" /></div>
                 <div>Projects shipped</div>
               </div>
               <div className="h-10 w-px bg-border" />
