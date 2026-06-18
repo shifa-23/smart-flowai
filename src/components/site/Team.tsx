@@ -3,6 +3,7 @@ import ashish from "@/assets/team/Ashish.png";
 import aditi from "@/assets/team/Aditi.jpeg";
 import shifa from "@/assets/team/Shifa.jpeg";
 import vatsal from "@/assets/team/Vatsal.jpeg";
+import tanya from "@/assets/team/tanya.jpeg";
 
 const teamMembers = [
   {
@@ -35,8 +36,16 @@ const teamMembers = [
   },
   {
     name: "Vatsal Varshney",
-    role: "Social Media Manager",
+    role: "Chief Development Officer (CDO)",
     image: vatsal,
+    intro:
+      "Leads software development initiatives, product engineering, technology execution, and innovation across SkillYug Technologies.",
+  },
+
+  {
+    name: "Tanya",
+    role: "Social Media Manager",
+    image: tanya,
     intro:
       "Handles social media strategy, content creation, audience engagement, and online brand visibility.",
   },
