@@ -1,6 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import logo from "@/assets/logo.jpg";
+import logo from "@/assets/logo.png";
 import Reveal from "./Reveal";
 
 const Home = () => {
@@ -14,11 +14,11 @@ const Home = () => {
         <div className="flex flex-col items-center justify-center gap-8 text-center">
           <Reveal>
             <div className="relative">
-              <img
-                src={logo}
-                alt="SkillYug Technologies"
-                className="h-28 md:h-36 w-auto mx-auto drop-shadow-lg"
-              />
+            <img
+  src={logo}
+  alt="SkillYug"
+  className="h-12 md:h-14 w-auto object-contain"
+/>
             </div>
           </Reveal>
 
