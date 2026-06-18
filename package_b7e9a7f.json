@@ -1,4 +1,4 @@
-{
+﻿{
   "name": "vite_react_shadcn_ts",
   "private": true,
   "version": "0.0.0",
@@ -69,7 +69,11 @@
     "@testing-library/jest-dom": "^6.6.0",
     "@testing-library/react": "^16.0.0",
     "@types/node": "^22.16.5",
+<<<<<<< HEAD
     "@types/react": "^18.3.31",
+=======
+    "@types/react": "^18.3.23",
+>>>>>>> 1913dd492bed85961f5300c841f2edc284060fa9
     "@types/react-dom": "^18.3.7",
     "@vitejs/plugin-react-swc": "^3.11.0",
     "autoprefixer": "^10.4.21",
@@ -84,6 +88,10 @@
     "typescript": "^5.8.3",
     "typescript-eslint": "^8.38.0",
     "vite": "^5.4.19",
+<<<<<<< HEAD
     "vitest": "^3.2.6"
+=======
+    "vitest": "^3.2.4"
+>>>>>>> 1913dd492bed85961f5300c841f2edc284060fa9
   }
 }

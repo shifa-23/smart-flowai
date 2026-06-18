@@ -4,20 +4,24 @@ import logo from "@/assets/logo.png";
 import { cn } from "@/lib/utils";
 
 const links = [
+  { label: "Home", href: "#home", id: "home" },
   { label: "Services", href: "#services", id: "services" },
   { label: "How it Works", href: "#how", id: "how" },
   { label: "Why Us", href: "#why", id: "why" },
-  { label: "Demos", href: "#portfolio", id: "portfolio" },
+  { label: "Portfolio", href: "#portfolio", id: "portfolio" },
+  { label: "Team", href: "#team", id: "team" },
 ];
 
 const Navbar = () => {
-  const [active, setActive] = useState<string>("");
+  const [active, setActive] = useState("");
   const [scrolled, setScrolled] = useState(false);
 
   useEffect(() => {
-    const onScroll = () => setScrolled(window.scrollY > 12);
+    const onScroll = () => setScrolled(window.scrollY > 10);
+
     onScroll();
     window.addEventListener("scroll", onScroll, { passive: true });
+
     return () => window.removeEventListener("scroll", onScroll);
   }, []);
 
@@ -25,17 +29,26 @@ const Navbar = () => {
     const sections = links
       .map((l) => document.getElementById(l.id))
       .filter((el): el is HTMLElement => !!el);
+
     if (!sections.length) return;
-    const obs = new IntersectionObserver(
+
+    const observer = new IntersectionObserver(
       (entries) => {
-        entries.forEach((e) => {
-          if (e.isIntersecting) setActive(e.target.id);
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActive(entry.target.id);
+          }
         });
       },
-      { rootMargin: "-45% 0px -50% 0px", threshold: 0 }
+      {
+        rootMargin: "-45% 0px -50% 0px",
+        threshold: 0,
+      }
     );
-    sections.forEach((s) => obs.observe(s));
-    return () => obs.disconnect();
+
+    sections.forEach((section) => observer.observe(section));
+
+    return () => observer.disconnect();
   }, []);
 
   return (
@@ -43,53 +56,75 @@ const Navbar = () => {
       <div className="mx-auto max-w-content px-6 md:px-10 py-4">
         <div
           className={cn(
-            "rounded-2xl shadow-lg border border-border flex items-center justify-between px-6 py-2 transition-medium",
-            scrolled ? "bg-white/85 backdrop-blur-xl shadow-card" : "bg-white/70 backdrop-blur-md shadow-sm"
+            "rounded-2xl border border-border flex items-center justify-between px-6 py-3 transition-all duration-300",
+            scrolled
+              ? "bg-white/90 backdrop-blur-xl shadow-lg"
+              : "bg-white/75 backdrop-blur-md shadow-sm"
           )}
         >
+          {/* Logo */}
           <a
-            href="#"
-            className="flex items-center gap-3 transition-fast hover:opacity-90"
-          >
-            <img
-              src={logo}
-              alt="SkillYug Technology logo"
-              className="h-12 md:h-14 w-auto object-contain"
-            />
+  href="#home"
+  className="flex items-center gap-3 transition-fast hover:opacity-90"
+>
+  <img
+    src={logo}
+    alt="SkillYug Technologies"
+    className="h-12 md:h-14 w-auto object-contain"
+  />
 
-            <div className="flex flex-col leading-none items-center">
-              <span className="text-2xl md:text-3xl font-extrabold tracking-tight whitespace-nowrap">
-                <span className="text-primary">SKILL</span>
-                <span className="text-[#0B1C3F]">YUG</span>
-              </span>
+  <div className="hidden sm:block">
+    <h1 className="font-bold text-lg md:text-xl text-slate-900 leading-tight">
+      SkillYug Technologies
+    </h1>
 
-              <span className="text-[10px] md:text-xs uppercase tracking-[0.2em] text-gray-500">
-                  TECHNOLOGIES
-              </span>
-            </div>
-          </a>
-          <nav className="hidden md:flex items-center gap-8 text-sm">
-            {links.map((l) => (
+    <p className="text-xs text-slate-500 tracking-wide">
+      Your Vision Engineered
+    </p>
+  </div>
+</a>
+
+          {/* Navigation */}
+          <nav className="hidden md:flex items-center gap-8 text-sm font-medium">
+            {links.map((link) => (
               <a
-                key={l.href}
-                href={l.href}
+                key={link.id}
+                href={link.href}
                 className={cn(
-                  "relative transition-fast",
-                  active === l.id ? "text-foreground" : "text-muted-foreground hover:text-foreground"
+                  "relative transition-all duration-300",
+                  active === link.id
+                    ? "text-primary"
+                    : "text-muted-foreground hover:text-foreground"
                 )}
               >
-                {l.label}
+                {link.label}
+
                 <span
                   className={cn(
-                    "absolute -bottom-1 left-0 h-0.5 rounded-full bg-gradient-primary transition-medium",
-                    active === l.id ? "w-full opacity-100" : "w-0 opacity-0"
+                    "absolute left-0 -bottom-1 h-[2px] bg-primary rounded-full transition-all duration-300",
+                    active === link.id
+                      ? "w-full opacity-100"
+                      : "w-0 opacity-0"
                   )}
                 />
               </a>
             ))}
           </nav>
-          <Button variant="hero" size="sm" className="btn-press btn-glow-sm btn-animated" asChild>
-            <a href="tel:9450935939">Book a Call</a>
+
+          {/* Contact Button */}
+          <Button
+            variant="hero"
+            size="sm"
+            className="hidden md:flex"
+            asChild
+          >
+            <a
+              href="https://docs.google.com/forms/d/12RdL1PB6xmfXQOTf6tjx4T1xmJNZPZKv5pBIudeYnyQ/viewform"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
+              Contact Us
+            </a>
           </Button>
         </div>
       </div>
