@@ -5,7 +5,7 @@ import Reveal from "./Reveal";
 
 export default function Hero() {
   return (
-    <section className="relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden bg-gradient-hero">
+    <section id="home" className="relative pt-32 pb-20 md:pt-40 md:pb-24 overflow-hidden bg-gradient-hero">
       <div className="glow-blob h-[480px] w-[480px] -top-32 -left-32 bg-primary/30 animate-float-slow" />
       <div className="glow-blob h-[520px] w-[520px] top-20 -right-40 bg-secondary/25 animate-float" />
 

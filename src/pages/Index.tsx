@@ -3,6 +3,7 @@ import Home from "@/components/site/Home";
 import Hero from "@/components/site/Hero";
 import TrustedStrip from "@/components/site/TrustedStrip";
 import Services from "@/components/site/Services";
+import Automations from "@/components/site/Automations";
 import HowItWorks from "@/components/site/HowItWorks";
 import WhyChoose from "@/components/site/WhyChoose";
 import Portfolio from "@/components/site/Portfolio";
@@ -15,16 +16,17 @@ const Index = () => {
   return (
     <main className="min-h-screen bg-background overflow-x-hidden">
       <Navbar />
-      <Home />
       <Hero />
       <TrustedStrip />
       <Services />
+      <Automations />
       <HowItWorks />
       <WhyChoose />
       <Portfolio />
       <Team />
       <Contact />
       <CTA />
+      <Home />
       <Footer />
     </main>
   );
