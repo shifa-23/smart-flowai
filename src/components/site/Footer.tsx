@@ -35,13 +35,18 @@ const Footer = () => {
             </h4>
 
             <ul className="space-y-3 text-sm text-muted-foreground">
-              {["Home", "Services", "Demos", "Contact"].map((l) => (
-                <li key={l}>
+              {[
+                { label: "Home", href: "#home" },
+                { label: "Services", href: "#services" },
+                { label: "Portfolio", href: "#portfolio" },
+                { label: "Contact", href: "#contact" },
+              ].map((l) => (
+                <li key={l.label}>
                   <a
-                    href="#"
+                    href={l.href}
                     className="relative hover:text-foreground transition-colors after:absolute after:left-0 after:-bottom-0.5 after:h-px after:w-0 after:bg-foreground after:content-[''] hover:after:w-full after:transition-all"
                   >
-                    {l}
+                    {l.label}
                   </a>
                 </li>
               ))}

@@ -1,27 +1,16 @@
 import { Button } from "@/components/ui/button";
 import { ArrowRight } from "lucide-react";
-import logo from "@/assets/logo.png";
 import Reveal from "./Reveal";
 
 const Home = () => {
   return (
-    <section id="home" className="relative py-32 md:py-40 bg-background overflow-hidden">
+    <section className="relative py-32 md:py-40 bg-background overflow-hidden">
       {/* Background blobs */}
       <div className="glow-blob h-[480px] w-[480px] -top-32 -left-32 bg-primary/20 animate-float-slow" />
       <div className="glow-blob h-[520px] w-[520px] top-20 -right-40 bg-secondary/15 animate-float" />
 
       <div className="relative mx-auto max-w-content px-6 md:px-10">
         <div className="flex flex-col items-center justify-center gap-8 text-center">
-          <Reveal>
-            <div className="relative">
-            <img
-  src={logo}
-  alt="SkillYug"
-  className="h-12 md:h-14 w-auto object-contain"
-/>
-            </div>
-          </Reveal>
-
           <Reveal delay={100}>
             <div>
               <h1 className="font-display text-4xl md:text-5xl lg:text-6xl font-bold leading-[1.1] tracking-tight max-w-3xl">
